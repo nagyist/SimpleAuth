@@ -7,6 +7,7 @@ public class SocialUser implements Parcelable {
 
   public String userId;
   public String accessToken;
+  public String accessTokenSecret;
   public String profilePictureUrl;
   public String username;
   public String fullName;
@@ -19,6 +20,7 @@ public class SocialUser implements Parcelable {
   public SocialUser(SocialUser other) {
     this.userId = other.userId;
     this.accessToken = other.accessToken;
+    this.accessTokenSecret = other.accessTokenSecret;
     this.profilePictureUrl = other.profilePictureUrl;
     this.username = other.username;
     this.fullName = other.fullName;
@@ -64,6 +66,7 @@ public class SocialUser implements Parcelable {
   public void writeToParcel(Parcel dest, int flags) {
     dest.writeString(this.userId);
     dest.writeString(this.accessToken);
+    dest.writeString(this.accessTokenSecret);
     dest.writeString(this.profilePictureUrl);
     dest.writeString(this.username);
     dest.writeString(this.fullName);
@@ -74,6 +77,7 @@ public class SocialUser implements Parcelable {
   protected SocialUser(Parcel in) {
     this.userId = in.readString();
     this.accessToken = in.readString();
+    this.accessTokenSecret = in.readString();
     this.profilePictureUrl = in.readString();
     this.username = in.readString();
     this.fullName = in.readString();

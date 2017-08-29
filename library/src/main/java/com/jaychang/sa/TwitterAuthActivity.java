@@ -84,6 +84,7 @@ public class TwitterAuthActivity extends SimpleAuthActivity {
         User data = userResult.data;
         user.userId = String.valueOf(data.getId());
         user.accessToken = session.getAuthToken().token;
+        user.accessTokenSecret = session.getAuthToken().secret;
         user.profilePictureUrl = String.format(PROFILE_PIC_URL, data.screenName);
         user.email = data.email != null ? data.email : "";
         user.fullName = data.name;
